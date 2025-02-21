@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: api-hubspot
+    ports:
+      - '8678:3000'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ./envs/production/.env

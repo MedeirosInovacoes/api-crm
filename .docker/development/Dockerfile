@@ -1,0 +1,34 @@
+FROM node:16-buster-slim
+
+RUN apt-get update && apt-get install -y procps libaio1 wget unzip
+
+RUN npm install -g @nestjs/cli
+
+WORKDIR /opt/oracle
+
+# Instalando o Cliente Oracle
+RUN wget https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linuxx64.zip && \
+    unzip instantclient-basiclite-linuxx64.zip && rm -f instantclient-basiclite-linuxx64.zip && \
+    cd /opt/oracle/instantclient* && rm -f *jdbc* *occi* *mysql* *mql1* *ipc1* *jar uidrvci genezi adrci && \
+    echo /opt/oracle/instantclient* > /etc/ld.so.conf.d/oracle-instantclient.conf && ldconfig
+
+USER node
+
+ENV LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11:$LD_LIBRARY_PATH
+ENV TZ=America/Sao_Paulo
+
+WORKDIR /app
+
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm ci
+
+COPY --chown=node:node . .
+
+RUN npm run build
+
+EXPOSE 3333
+
+CMD ["npm", "run", "start:dev"]
+

@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: apihubspot-dev
+    build:
+      context: ./../../
+      dockerfile: ./.docker/development/Dockerfile
+    ports:
+      - '3333:3333'
+    volumes:
+      - .:/app
