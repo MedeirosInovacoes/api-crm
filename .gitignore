@@ -3,7 +3,7 @@
 /node_modules
 /build
 
-envs
+envs/
 
 # Logs
 logs
