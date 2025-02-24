@@ -13,6 +13,7 @@ export type TFindAllDealsPipelinesOutput = {
   companyId: string
   ownerName: string
   pipelineId: string
+  createdAt: Date
   lostBusinessReason: string
   unqualifiedBusinessReason: string
   dateEnteredLeadRetrievedBase?: Date

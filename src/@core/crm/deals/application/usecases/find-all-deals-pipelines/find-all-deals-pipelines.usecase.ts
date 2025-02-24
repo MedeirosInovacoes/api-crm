@@ -38,6 +38,7 @@ export class FindAllDealsPipelinesUseCase {
         'associations.company',
         'negocio_perdido',
         'closed_lost_reason',
+        'createdate',
       ],
     })
 

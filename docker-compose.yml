@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: api-hubspot
+    container_name: api-crm
     ports:
       - '8678:3000'
     build:
