@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: apicrm-dev
+    build:
+      context: ./../
+      dockerfile: ./.docker/Dockerfile.dev
+    ports:
+      - '3333:3333'
+    volumes:
+      - .:/app
+    env_file:
+      - ./../envs/.env.dev

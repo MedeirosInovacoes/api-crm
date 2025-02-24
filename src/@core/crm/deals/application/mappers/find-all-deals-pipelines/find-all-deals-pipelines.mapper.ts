@@ -24,6 +24,7 @@ export class FindAllDealsPipelinesOutputMapper {
       pipelineId: ReturnPipelineStageByIdHelper.execute(deal.pipelineId),
       lostBusinessReason: deal.lostBusinessReason,
       unqualifiedBusinessReason: deal.unqualifiedBusinessReason,
+      createdAt: deal.createdAt,
       dateEnteredLeadRetrievedADisqualified: deal.dateEnteredLeadRetrievedADisqualified,
       dateEnteredLeadRetrievedAfterSales: deal.dateEnteredLeadRetrievedAfterSales,
       dateEnteredLeadRetrievedALostDeal: deal.dateEnteredLeadRetrievedALostDeal,
