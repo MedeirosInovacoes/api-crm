@@ -8,3 +8,4 @@ services:
       dockerfile: Dockerfile
     env_file:
       - ./envs/production/.env
+    restart: unless-stopped
