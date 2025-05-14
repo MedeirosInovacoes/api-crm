@@ -16,9 +16,9 @@ export class FindAllDealsPipelinesOutputMapper {
       id: deal.id,
       customerCode: deal.customerCode ?? null,
       ownerName: match?.name ?? null,
-      name: deal.name.includes('Negócio de')
+      name: deal.name?.includes('Negócio de')
         ? deal.name.split(' , ')[0].split('Negócio de ')[1]
-        : deal.name,
+        : deal.name ?? null,
       companyId: deal.companyId,
       stage: ReturnPipelineStageByIdHelper.execute(deal.stage),
       pipelineId: ReturnPipelineStageByIdHelper.execute(deal.pipelineId),

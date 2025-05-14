@@ -50,6 +50,7 @@ export class ContactFakeBuilder<TBuild = any> extends FakeBuilder {
         }),
     )
 
+    // @ts-ignore
     return this.countObjs === 1 ? (contacts[0] as any) : contacts
   }
 

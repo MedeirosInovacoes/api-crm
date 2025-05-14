@@ -131,6 +131,7 @@ export class DealFakeBuilder<TBuild = any> extends FakeBuilder {
       return deal
     })
 
+    // @ts-ignore
     return this.countObjs === 1 ? (deals[0] as any) : deals
   }
 

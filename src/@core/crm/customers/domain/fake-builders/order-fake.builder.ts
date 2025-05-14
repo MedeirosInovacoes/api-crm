@@ -79,6 +79,7 @@ export class OrderFakeBuilder<TBuild = any> extends FakeBuilder {
         }),
     )
 
+    // @ts-ignore
     return this.countObjs === 1 ? (orders[0] as any) : orders
   }
 

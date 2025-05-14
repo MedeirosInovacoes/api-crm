@@ -45,6 +45,7 @@ export class DeliveryDetailFakeBuilder<TBuild = any> extends FakeBuilder {
         }),
       )
 
+    // @ts-ignore
     return this.countObjs === 1 ? (values[0] as any) : values
   }
 

@@ -28,6 +28,7 @@ export class CrmController {
   ) {}
 
   private isProduction() {
+    return false
     return env.NODE_ENV === 'production'
   }
 

@@ -85,6 +85,7 @@ export class ProductFakeBuilder<TBuild = ProductEntity> extends FakeBuilder {
         ),
     )
 
+    // @ts-ignore
     return this.countObjs === 1 ? (products[0] as any) : products
   }
 

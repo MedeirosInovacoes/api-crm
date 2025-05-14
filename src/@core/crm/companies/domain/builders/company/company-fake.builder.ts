@@ -123,6 +123,7 @@ export class CompanyFakeBuilder<TBuild = any> extends FakeBuilder {
         ),
     )
 
+    // @ts-ignore
     return this.countObjs === 1 ? (companies[0] as any) : companies
   }
 

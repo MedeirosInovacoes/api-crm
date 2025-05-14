@@ -100,6 +100,7 @@ export class CustomerFakeBuilder<TBuild = any> extends FakeBuilder {
           }),
       )
 
+    // @ts-ignore
     return this.countObjs === 1 ? (customers[0] as any) : customers
   }
 
